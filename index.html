@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECURITY HEADERS
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- Content Security Policy: blocks XSS, injections, clickjacking -->
+    <!-- unsafe-inline needed for inline CSS used by React/emotion; unsafe-eval blocked -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: blob:;
+      connect-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+    " />
+
+    <!-- Prevent MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Prevent clickjacking (inline equivalent of X-Frame-Options: DENY) -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+
+    <!-- Disable referrer leakage -->
+    <meta name="referrer" content="no-referrer" />
+
+    <!-- Prevent browser features not needed -->
+    <meta http-equiv="Permissions-Policy" content="
+      camera=(),
+      microphone=(),
+      geolocation=(),
+      payment=(),
+      usb=()
+    " />
+
+    <!-- ═══════════════════════════════════════════════════════
+         SEO & IDENTITY
+         ═══════════════════════════════════════════════════════ -->
+    <title>Cognitive Games Practice Hub — Practice. Improve. Perform.</title>
+    <meta name="description" content="An independent practice platform for Capgemini-style cognitive and game-based assessments. Practice Motion Challenge, Grid Challenge, Switch Challenge, Digit Challenge and more." />
+    <meta name="theme-color" content="#F9F9F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F0F0E" media="(prefers-color-scheme: dark)" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cognitive Games Practice Hub" />
+    <meta property="og:description" content="Practice Capgemini-style cognitive assessments. Free, no sign-up required." />
+
+    <!-- ═══════════════════════════════════════════════════════
+         PERFORMANCE
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- Preconnect to Google Fonts for fast font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DNS prefetch as fallback -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
